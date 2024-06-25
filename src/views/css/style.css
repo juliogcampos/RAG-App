@@ -1,0 +1,73 @@
+/* definir altura da classe principal como 80% da tela */
+.main {
+    height: 80vh;
+    border-bottom: 1px solid lightgrey;
+}
+
+/* colocar input de texto no rodapé */
+.main .stTextInput {
+    position: fixed;
+    bottom: 2rem;
+}
+
+.main .stTextInput::after {
+    content: "A aplicação pode apresentar informações imprecisas, inclusive sobre pessoas. Por isso, cheque as respostas.";
+    font-size: small;
+    bottom: 2rem;
+}
+
+.main .stTextInput>label {
+    display: none;
+}
+
+/* ocultar botão do widget de selecionar LLM */
+button[kind="primaryFormSubmit"] {
+    display: none;
+}
+
+/* ocultar label do input file */
+div[data-testid="stFileUploader"]>label {
+    display: none;
+}
+
+div[data-testid="stForm"] {
+    background-color: #eaeaea;
+}
+
+span[data-testid="stAlertDynamicIcon"] {
+    position: relative;
+    top: 2px;
+    right: 5px;
+}
+
+.react-json-view {
+    line-break: anywhere;
+}
+
+
+/* 
+    Customizar textos do carregador de arquivos 
+    https://discuss.streamlit.io/t/how-to-change-text-language-in-a-widgets/35931/3
+*/
+
+div[data-testid="stFileUploaderDropzoneInstructions"] div::before {
+    content: "Clique aqui ou arraste e solte arquivos nessa área";
+}
+
+div[data-testid="stFileUploaderDropzoneInstructions"] div span {
+    display: none;
+}
+
+div[data-testid="stFileUploaderDropzoneInstructions"] div::after {
+    content: "Limite de 200MB por arquivo";
+    font-size: small;
+    color: gray;
+}
+
+div[data-testid="stFileUploaderDropzoneInstructions"] div small {
+    display: none;
+}
+
+section[data-testid="stFileUploaderDropzone"] button {
+    display: none;
+}
