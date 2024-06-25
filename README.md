@@ -98,6 +98,6 @@ pytest --cov=. --cov-report html
 
 - Abra o arquivo **index.html** na pasta **htmlcov**, localizada no diretório raiz do projeto, para visualizar o relatório de cobertura de testes.
 
-# 5 - Documentação
+## 5 - Documentação
 
 Visite a wiki do projeto para ler a documentação: <https://github.com/juliogcampos/RAG-App/wiki>
