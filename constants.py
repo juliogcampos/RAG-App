@@ -1,5 +1,6 @@
 """Módulo responsável por armazenar constantes da aplicação."""
 
+from pathlib import Path
 from typing import Final
 
 # Diretório da aplicação
@@ -10,6 +11,7 @@ CHROMA_PATH: Final[str] = "db/chroma"
 
 # Diretório onde estão armazenados os arquivos carregados na aplicação
 DATA_PATH: Final[str] = "data"
+Path(DATA_PATH).mkdir(parents=True, exist_ok=True)  # Criar pasta se não existir
 
 # Arquivo CSS da aplicação
 CSS_PATH: Final[str] = "src/views/css/style.css"
