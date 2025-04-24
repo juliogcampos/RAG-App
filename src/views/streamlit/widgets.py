@@ -12,29 +12,21 @@ from src.views.streamlit.session_state import set_llm_name, clean_input_question
 
 
 def show_select_llm() -> None:
-    """Finção que exibe widget para selecionar um LLM."""
+    """Função que exibe widget para selecionar um LLM."""
 
-    with st.form(key="select_llm"):
+    models: List = list_of_Local_models()
 
-        # lista de modelos baixados com o Ollama
-        models: List = list_of_Local_models()
+    st.subheader("🤖 LLM")
 
-        st.subheader("🤖 LLM")
+    selected_llm = st.selectbox(
+        "Selecione um modelo:", models,
+        key="select_llm"
+    )
 
-        # selecionar LLM
-        selected_llm = st.selectbox(
-            "Selecione um modelo:", models,
-            key="select_llm",
-        )
-
-        # salvar nome da llm selecionada na sessão de estado
+    if "last_selected_llm" not in st.session_state or st.session_state.last_selected_llm != selected_llm:
+        st.session_state.last_selected_llm = selected_llm
         set_llm_name(selected_llm)
-
-        # botão de submeter
-        submit_btn = st.form_submit_button("Selecionar", type="primary", disabled=True)
-
-        if submit_btn:
-            st.toast(f"Modelo '{selected_llm}' selecionado.")
+        st.toast(f"Modelo '{selected_llm}' selecionado.")
 
 
 def show_file_uploader() -> None:

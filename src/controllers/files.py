@@ -68,12 +68,12 @@ def split_documents(documents: list[Document]) -> list[Document]:
     return text_splitter.split_documents(documents)
 
 
-def get_list_of_uploaded_files() -> List:
+def get_list_of_uploaded_files() -> List[str]:
     """Função que retorna a lista de arquivos carregados pelo usuário."""
-
+    if not os.path.exists(DATA_PATH):
+        os.makedirs(DATA_PATH)
     files = os.listdir(DATA_PATH)
-    absolute_paths: List = [os.path.abspath(os.path.join(DATA_PATH, file)) for file in files]
-    return absolute_paths
+    return [os.path.join(DATA_PATH, file) for file in files]
 
 
 def delete_uploaded_files() -> str:
