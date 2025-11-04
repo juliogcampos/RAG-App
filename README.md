@@ -67,7 +67,7 @@ pip uninstall -r requirements.txt -y
 - Execute o comando abaixo para executar a aplicação:
 
 ```python
-streamlit run app.py
+    python -m streamlit run app.py
 ```
 
 ## 4 - Testes
