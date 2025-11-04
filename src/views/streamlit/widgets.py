@@ -11,7 +11,7 @@ from src.controllers.files import get_list_of_uploaded_files, delete_uploaded_fi
 from src.views.streamlit.session_state import set_llm_name, clean_input_question
 
 
-def show_select_llm() -> None:
+def select_llm() -> None:
     """Função que exibe widget para selecionar um LLM."""
 
     models: List = list_of_Local_models()
@@ -29,7 +29,7 @@ def show_select_llm() -> None:
         st.toast(f"Modelo '{selected_llm}' selecionado.")
 
 
-def show_file_uploader() -> None:
+def file_uploader() -> None:
     """Função que exibe widget para carregar arquivos."""
 
     with st.form("upload_docs"):
@@ -58,7 +58,7 @@ def show_file_uploader() -> None:
         st.session_state[UPLOADED_FILES] = get_list_of_uploaded_files()
 
 
-def show_vector_db() -> None:
+def vector_db() -> None:
     """Função que exibe widget do banco de dados vetorial."""
 
     with st.container(border=True):

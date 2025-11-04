@@ -3,9 +3,9 @@
 import streamlit as st
 
 from src.views.streamlit.widgets import (
-    show_file_uploader,
-    show_select_llm,
-    show_vector_db
+    file_uploader,
+    select_llm,
+    vector_db
 )
 
 
@@ -16,10 +16,10 @@ def load_sidebar() -> None:
     with st.sidebar:
 
         # mostrar widget para selecionar um LLM
-        show_select_llm()
+        select_llm()
 
         # mostrar widget para carregar arquivos
-        show_file_uploader()
+        file_uploader()
 
         # mostrar widget do banco de dados vetorial
-        show_vector_db()
+        vector_db()

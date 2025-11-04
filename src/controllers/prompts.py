@@ -2,13 +2,19 @@
 
 from typing import Tuple
 
-PROMPT_TEMPLATE: Tuple = (
+PROMPT_TEMPLATE_BASE: Tuple = (
+    "Answer the question in Portuguese."
+    "If you don't know the answer, just say that you didn't find the information in the your training data."
+    "Don't try to generate a response."
+    "Context: {context}"
+)
+
+PROMPT_TEMPLATE_FOR_RAG: Tuple = (
     "Answer the question in Portuguese based only on the context below."
     "If you don't know the answer, just say that you didn't find the information in the documents."
     "Don't try to generate a response."
     "Context: {context}"
 )
-
 
 QA_SYSTEM_PROMPT: str = """You are an assistant for question-answering tasks. \
 Use the following pieces of retrieved context to answer the question. \

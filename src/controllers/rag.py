@@ -11,12 +11,8 @@ from typing import Dict
 from langchain.chains.retrieval import create_retrieval_chain
 from langchain.chains.combine_documents import create_stuff_documents_chain
 from langchain_core.prompts import ChatPromptTemplate
-from langchain_community.vectorstores import Chroma
 from langchain_community.llms.ollama import Ollama
 
-from constants import CHROMA_PATH
-from src.controllers.prompts import PROMPT_TEMPLATE
-from src.controllers.embeddings import get_default_text_embedding
 from src.controllers.vector_db import get_chroma_db
 
 
